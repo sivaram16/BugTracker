@@ -1,0 +1,3 @@
+mutation ChangeStatus($bugId:String!,$userId:String!,$status:String!){
+changeStatus(bugId:$bugId,userId:$userId,status:$status)
+}

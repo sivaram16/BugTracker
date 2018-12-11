@@ -1,0 +1,3 @@
+mutation AddBug($adminId:String!,$assignEmail:String!,$title:String!,$description:String!){
+  addBug(adminId:$adminId,assignEmail:$assignEmail,title:$title,description:$description)
+}

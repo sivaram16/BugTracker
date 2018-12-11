@@ -1,0 +1,12 @@
+query ViewBugs($userId:String!){
+  viewBugs(userId:$userId){
+    id
+    title
+    description
+    status
+    assignedTo{
+      id
+      email
+    }
+  }
+}

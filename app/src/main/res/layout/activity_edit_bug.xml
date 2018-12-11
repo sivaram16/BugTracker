@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditBug">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:onClick="back"
+        app:srcCompat="@drawable/ic_chevron_left_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="74dp"
+        android:text="Title :"
+        android:id="@+id/tvv"
+        android:textSize="20sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="58dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="79dp"
+        android:layout_marginLeft="175dp"
+        android:text="TextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvv"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="Description :"/>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="118dp"
+        android:layout_marginLeft="175dp"
+        android:text="TextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Assigned to :"
+        android:textSize="20sp"
+        android:layout_below="@id/textView1"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/assign"
+        android:text="Text view"
+        android:layout_marginLeft="160dp"
+        android:layout_below="@id/textView1"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@id/assign"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"
+        android:text="Status :"/>
+
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_below="@id/assign"
+        android:layout_marginTop="54dp"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        android:layout_marginLeft="150sp"
+        android:id="@+id/dropdown1"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center"
+        android:id="@+id/update"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/dropdown1"
+        android:text="Update information"
+        style="?android:attr/borderlessButtonStyle"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:onClick="update"
+        android:background="@drawable/mybutton"
+        android:layout_height="58dp" />
+
+
+
+
+
+
+
+</RelativeLayout>
