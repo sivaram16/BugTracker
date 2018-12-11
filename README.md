@@ -14,7 +14,10 @@ It is a simple Android app for tracking bugs and uses apollo client for communit
 - change status of bugs
 
 ### Screenshots
-![]()
+<img src="./ScreenShots/Screenshot_1544507976.png" width="300" /> 
+<img src="./ScreenShots/Screenshot_1544508256.png" width="300" />
+<img src="./ScreenShots/Screenshot_1544508316.png" width="300" />
+<img src="./ScreenShots/Screenshot_1544508345.png" width="300" />
 
 ### Requirements
 - server(connect the ip address)
