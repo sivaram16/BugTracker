@@ -6,6 +6,9 @@ It is a simple Android app for tracking bugs and uses apollo client for communit
 
 [Bug tracker Server](https://github.com/vineeshvk/BugTrackerServer) is the server used as a backend for this android.
 
+## Apk
+[BugTracked.apk](./app/release/app-release.apk)
+
 ### Features
 - create user(admin or normal)
 - login
