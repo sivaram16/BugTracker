@@ -121,7 +121,6 @@ public class EditBug extends AppCompatActivity implements AdapterView.OnItemSele
             @Override
             public void onResponse(@Nonnull Response<ChangeStatusMutation.Data> response) {
                 Log.e("dssss",""+response.data().changeStatus);
-                Toast.makeText(EditBug.this, "Updated Successfully !" , Toast.LENGTH_LONG).show();
                 onBackPressed();
             }
 
@@ -133,6 +132,9 @@ public class EditBug extends AppCompatActivity implements AdapterView.OnItemSele
 
             }
         });
+
+        Toast.makeText(EditBug.this, "Updated Successfully !" , Toast.LENGTH_LONG).show();
+
 
 
 

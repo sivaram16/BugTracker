@@ -3,6 +3,7 @@ package com.example.sivaram.bugtracker;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,7 @@ public class AddBug extends AppCompatActivity implements AdapterView.OnItemSelec
     private Boolean admin;
     List<String> items;
     private Button create;
+    private String email;
     private ArrayAdapter<String> adapter;
 
     @Override
@@ -121,8 +123,8 @@ public class AddBug extends AppCompatActivity implements AdapterView.OnItemSelec
                     @Override
                     public void onResponse(@Nonnull Response<AddBugMutation.Data> response) {
                         Log.e("",""+response.data().addBug);
-                        Toast.makeText(AddBug.this,"Bug Added ",Toast.LENGTH_SHORT).show();
                         onBackPressed();
+
                     }
 
                     @Override
@@ -133,6 +135,14 @@ public class AddBug extends AppCompatActivity implements AdapterView.OnItemSelec
 
                     }
                 });
+
+        Toast.makeText(AddBug.this,"Bug Added ",Toast.LENGTH_SHORT).show();
+        email=dropdown.getSelectedItem().toString()+"@gmail.com";
+        Intent y = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",email,null));
+        y.putExtra(Intent.EXTRA_SUBJECT,title.getText().toString());
+        y.putExtra(Intent.EXTRA_TEXT, descp.getText().toString());
+        startActivity(y.createChooser(y,"choose app to send feedback"));
+
     }
 
 
