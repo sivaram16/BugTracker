@@ -1,4 +1,4 @@
-# BugTracker Server
+# BugTracker Android App
 
 It is a simple Android app for tracking bugs and uses apollo client for communitcating with the backend.
 
