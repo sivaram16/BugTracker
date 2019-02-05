@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 
 public class MyApolloClient {
-    private  static final String BASE_URL = "https://bugtracker-server.herokuapp.com/";
+    private  static final String BASE_URL = "https://bugtracker-server.herokuapp.com/"; //http://192.168.43.33:4444/
     private static ApolloClient apolloClient;
 
 

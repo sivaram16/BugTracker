@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Home");
+        getSupportActionBar().setTitle("Bug List");
         try {
             admin = getIntent().getExtras().getBoolean("Admin",false);
             userid = getIntent().getExtras().getString("UID");
@@ -70,42 +70,42 @@ public class MainActivity extends AppCompatActivity
         MyApolloClient.getApolloClient().query(ViewBugsQuery.builder()
                 .userId(userid).build())
                 .enqueue(new ApolloCall.Callback<ViewBugsQuery.Data>() {
-            @Override
-            public void onResponse(@Nonnull final Response<ViewBugsQuery.Data> response) {
-
-                runOnUiThread(new Runnable() {
                     @Override
-                    public void run() {
-                        listitemtitle=new String[response.data().viewBugs.size()];
-                        listitemdescp= new String[response.data().viewBugs.size()];
-                        assignedto= new String[response.data().viewBugs.size()];
-                        bugidd= new String[response.data().viewBugs.size()];
-                        statuss=new String[response.data().viewBugs.size()];
-                        for (int i=0;i<response.data().viewBugs.size();i++) {
-                            Log.e("",""+response.data().viewBugs.get(i).title);
-                            listitemtitle[i]=response.data().viewBugs.get(i).title;
-                            bugidd[i]=response.data().viewBugs.get(i).id;
-                            statuss[i]=response.data().viewBugs.get(i).status;
-                            listitemdescp[i]=response.data().viewBugs.get(i).description;
-                            assignedto[i]=response.data().viewBugs.get(i).assignedTo.email;
-                            Log.e("",""+ Arrays.toString(assignedto));
-                            list.add(response.data().viewBugs.get(i).title);
-                            adapter.notifyDataSetChanged();
-                        }
+                    public void onResponse(@Nonnull final Response<ViewBugsQuery.Data> response) {
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                listitemtitle=new String[response.data().viewBugs.size()];
+                                listitemdescp= new String[response.data().viewBugs.size()];
+                                assignedto= new String[response.data().viewBugs.size()];
+                                bugidd= new String[response.data().viewBugs.size()];
+                                statuss=new String[response.data().viewBugs.size()];
+                                for (int i=0;i<response.data().viewBugs.size();i++) {
+                                    Log.e("",""+response.data().viewBugs.get(i).title);
+                                    listitemtitle[i]=response.data().viewBugs.get(i).title;
+                                    bugidd[i]=response.data().viewBugs.get(i).id;
+                                    statuss[i]=response.data().viewBugs.get(i).status;
+                                    listitemdescp[i]=response.data().viewBugs.get(i).description;
+                                    assignedto[i]=response.data().viewBugs.get(i).assignedTo.email;
+                                    Log.e("",""+ Arrays.toString(assignedto));
+                                    list.add(response.data().viewBugs.get(i).title);
+                                    adapter.notifyDataSetChanged();
+                                }
+
+                            }
+                        });
+
+
+
+                    }
+
+                    @Override
+                    public void onFailure(@Nonnull ApolloException e) {
+                        Log.e("","jhfjhfjhjfd");
 
                     }
                 });
-
-
-
-            }
-
-            @Override
-            public void onFailure(@Nonnull ApolloException e) {
-                Log.e("","jhfjhfjhjfd");
-
-            }
-        });
 
         bugid.setAdapter(adapter);
         bugid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -138,11 +138,11 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent= new Intent(MainActivity.this,AddBug.class);
+                Intent intent= new Intent(MainActivity.this,AddBug.class);
                 intent.putExtra("UID",userid);
                 intent.putExtra("assigned",assignedto);
                 intent.putExtra("Admin",admin);
-               startActivity(intent);
+                startActivity(intent);
             }
         });
 
